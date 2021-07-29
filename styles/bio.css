@@ -125,23 +125,73 @@ button {
   left: 0;
   bottom: 0;
 }
+.header-nav__list-item {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+@media only screen and (min-width: 500px) {
+  .header-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  .header-nav__logo {
+    padding: 2.2rem 0 2rem 2rem;
+  }
+  .header-nav__list {
+    width: 40%;
+    margin-left: 4rem;
+  }
+  .header-nav__list--relative {
+    height: 100%;
+  }
+  .header-nav__list--absolute:hover::after {
+    bottom: -2.3rem;
+  }
+  .header-nav__list-item {
+    display: flex;
+    align-self: center;
+  }
+}
+
 .hero {
   display: flex;
   align-items: center;
   background-image: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url(../assets/images/hero-bio.jpg);
   background-position: center;
   background-size: cover;
-  height: 39vh;
+  height: 40vh;
 }
 .hero__header {
   color: #ffffff;
   font-weight: 600;
   margin: 0 0 0 2rem;
 }
+@media only screen and (min-width: 500px) {
+  .hero {
+    height: 54vh;
+  }
+  .hero__header {
+    font-size: 3.5rem;
+  }
+}
 
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .about__header {
+  display: flex;
+  align-self: flex-start;
   padding: 2.4rem 0 1.6rem 0;
   font-weight: 600;
+}
+.about__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .about__img {
   height: auto;
@@ -164,8 +214,23 @@ button {
 .about__bio-paragraph {
   padding: 0 0 1.3rem 0;
 }
+@media only screen and (min-width: 500px) {
+  .about__header {
+    padding: 3rem 0 2rem 1rem;
+  }
+  .about__container {
+    width: 90%;
+  }
+}
 
+.gallery {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .gallery__header {
+  display: flex;
   font-weight: 600;
   padding: 1.5rem 0 1.3rem 0;
 }
@@ -180,8 +245,22 @@ button {
   width: 98%;
   margin-bottom: 1rem;
 }
+@media only screen and (min-width: 500px) {
+  .gallery__header {
+    padding: 2rem 0 2rem 0rem;
+    width: 90%;
+  }
+  .gallery__photo-list {
+    width: 90%;
+  }
+  .gallery__photo {
+    margin-bottom: 2rem;
+  }
+}
 
 .footer {
+  display: flex;
+  justify-content: center;
   background-color: #323232;
   padding: 1.5rem;
   color: #ffffff;
@@ -226,4 +305,41 @@ button {
 }
 .footer__copyright {
   font-size: 1.1rem;
+}
+@media only screen and (min-width: 500px) {
+  .footer__container {
+    width: 90%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  body {
+    /* body & footer copy tablet/desktop*/
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+  }
+
+  h1 {
+    /* page header */
+    font-size: 6rem;
+    line-height: 6.8rem;
+  }
+
+  h2 {
+    /* section header */
+    font-size: 3.6rem;
+    line-height: 4.4rem;
+  }
+
+  h3 {
+    /* sub header */
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+  }
+
+  label,
+button {
+    /* labels & buttons */
+    font-size: 1.2rem;
+  }
 }
