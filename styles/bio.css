@@ -1,3 +1,4 @@
+/* adjustment for mobile / smaller screen */
 * {
   margin: 0;
   padding: 0;
@@ -92,64 +93,29 @@ button {
   src: url(../../assets/font/alternative-files/AvenirNextLTProBold.ttf);
   font-weight: 700;
 }
-@media (min-width: 768px) {
-  body {
-    /* body & footer copy tablet/desktop*/
-    font-size: 1.4rem;
-    line-height: 2.2rem;
-  }
-
-  h1 {
-    /* page header */
-    font-size: 6rem;
-    line-height: 6.8rem;
-  }
-
-  h2 {
-    /* section header */
-    font-size: 3.6rem;
-    line-height: 4.4rem;
-  }
-
-  h3 {
-    /* sub header */
-    font-size: 2.4rem;
-    line-height: 3.2rem;
-  }
-
-  label,
-button {
-    /* labels & buttons */
-    font-size: 1.2rem;
-  }
-}
 .header-nav {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   background-color: #323232;
 }
-
 .header-nav__logo {
   padding: 2.2rem 0 1.2rem 0;
   min-height: 1.5rem;
   min-width: 10rem;
 }
-
 .header-nav__list {
   display: flex;
   justify-content: space-around;
   width: 100%;
 }
-
 .header-nav__list--relative {
   position: relative;
   text-align: center;
   width: 100%;
   height: 4rem;
 }
-
 .header-nav__list--absolute:hover::after {
   content: "";
   position: absolute;
@@ -159,16 +125,14 @@ button {
   left: 0;
   bottom: 0;
 }
-
 .hero {
   display: flex;
   align-items: center;
   background-image: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url(../assets/images/hero-bio.jpg);
   background-position: center;
   background-size: cover;
-  height: 38vh;
+  height: 39vh;
 }
-
 .hero__header {
   color: #ffffff;
   font-weight: 600;
@@ -179,29 +143,24 @@ button {
   padding: 2.4rem 0 1.6rem 0;
   font-weight: 600;
 }
-
 .about__img {
   height: auto;
   width: 100%;
 }
-
 .about__quote {
   padding: 1.6rem 0;
   font-weight: 600;
 }
-
 .about__quote-author {
   padding: 0 0 1.6rem 0;
   font-weight: 600;
 }
-
 .about__bio-header {
   padding: 1.5rem 0 1.3rem 0;
   font-weight: 400;
   font-size: 1.7rem;
   color: #000000;
 }
-
 .about__bio-paragraph {
   padding: 0 0 1.3rem 0;
 }
@@ -210,13 +169,61 @@ button {
   font-weight: 600;
   padding: 1.5rem 0 1.3rem 0;
 }
-
+.gallery__photo-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .gallery__photo {
   height: auto;
-  width: 100%;
+  width: 98%;
   margin-bottom: 1rem;
 }
 
 .footer {
   background-color: #323232;
+  padding: 1.5rem;
+  color: #ffffff;
+}
+.footer__header {
+  font-weight: 600;
+  padding: 2rem 0 1.6rem 0;
+}
+.footer__icon-list {
+  padding: 0 0 1.5rem 0;
+}
+.footer__icon {
+  margin-right: 2.6rem;
+}
+.footer__logo--tablet {
+  display: none;
+  padding: 2.2rem 0 1.2rem 0;
+  min-height: 1.5rem;
+  min-width: 10rem;
+}
+.footer__contact-list {
+  display: flex;
+  flex-direction: column;
+}
+.footer__contact-card {
+  padding: 1.7rem 0;
+}
+.footer__contact-name {
+  font-weight: 600;
+  padding: 0 0 1.9rem 0;
+}
+.footer__contact-area {
+  padding: 0 0 1.9rem 0;
+}
+.footer__copy-logo {
+  margin-top: 3rem;
+}
+.footer__logo--mobile {
+  padding: 2.2rem 0 1.2rem 0;
+  min-height: 1.5rem;
+  min-width: 10rem;
+}
+.footer__copyright {
+  font-size: 1.1rem;
 }

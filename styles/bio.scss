@@ -1,51 +1,41 @@
 @use './partials/partial' as *;
 @use './partials/base' as *;
-@use './partials/mediaqueries' as *;
 
 // top navigation
 
 .header-nav {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  @include flex-column;
   background-color: $bandsite-black;
-}
 
-.header-nav__logo {
-  padding: 2.2rem 00 1.2rem 0;
-  min-height: 1.5rem;
-  //   max-height: 2rem;
-  min-width: 10rem;
-  //   max-width: 12rem;
-}
+  &__logo {
+    @include logo;
+  }
 
-.header-nav__list {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  //   padding: 0 0 2rem 0;
-}
+  &__list {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
 
-.header-nav__list--relative {
-  position: relative;
-  text-align: center;
-  width: 100%;
-  height: 4rem;
-}
+  &__list--relative {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    height: 4rem;
+  }
 
-.header-nav__list--absolute:hover::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 0.3rem;
-  background-color: $white;
-  left: 0;
-  bottom: 0;
-}
+  &__list--absolute:hover::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0.3rem;
+    background-color: $white;
+    left: 0;
+    bottom: 0;
+  }
 
-.header-nav__list-item {
-  //   padding: 0 0 1rem 0;
+  &__list-item {
+  }
 }
 
 // hero header
@@ -59,74 +49,132 @@
     url(../assets/images/hero-bio.jpg);
   background-position: center;
   background-size: cover;
-  height: 38vh;
-}
+  height: 39vh;
 
-.hero__header {
-  color: $white;
-  font-weight: 600;
-  margin: 0 0 0 2rem;
+  &__header {
+    color: $white;
+    font-weight: 600;
+    margin: 0 0 0 2rem;
+  }
 }
 
 // about section
 .about {
-}
+  &__header {
+    padding: 2.4rem 0 1.6rem 0;
+    font-weight: 600;
+  }
 
-.about__header {
-  padding: 2.4rem 0 1.6rem 0;
-  font-weight: 600;
-}
+  &__img {
+    height: auto;
+    width: 100%;
+  }
 
-.about__img {
-  height: auto;
-  width: 100%;
-}
+  &__quote {
+    padding: 1.6rem 0;
+    font-weight: 600;
+  }
 
-.about__quote {
-  padding: 1.6rem 0;
-  font-weight: 600;
-}
+  &__quote-author {
+    padding: 0 0 1.6rem 0;
+    font-weight: 600;
+  }
 
-.about__quote-author {
-  padding: 0 0 1.6rem 0;
-  font-weight: 600;
-}
+  &__bio-header {
+    padding: 1.5rem 0 1.3rem 0;
+    font-weight: 400;
+    font-size: 1.7rem;
+    color: $bandsite-darkblack;
+  }
 
-.about__bio-header {
-  padding: 1.5rem 0 1.3rem 0;
-  font-weight: 400;
-  font-size: 1.7rem;
-  color: $bandsite-darkblack;
-}
+  &__bio-container {
+  }
 
-.about__bio-container {
-}
-
-.about__bio-paragraph {
-  padding: 0 0 1.3rem 0;
+  &__bio-paragraph {
+    padding: 0 0 1.3rem 0;
+  }
 }
 
 // photo gallery
 
 .gallery {
-}
+  &__header {
+    font-weight: 600;
+    padding: 1.5rem 0 1.3rem 0;
+  }
 
-.gallery__header {
-  font-weight: 600;
-  padding: 1.5rem 0 1.3rem 0;
-}
+  &__photo-list {
+    @include flex-column;
+  }
 
-.gallery__photo-list {
-}
-
-.gallery__photo {
-  height: auto;
-  width: 100%;
-  margin-bottom: 1rem;
+  &__photo {
+    height: auto;
+    width: 98%;
+    margin-bottom: 1rem;
+  }
 }
 
 // footer
 
 .footer {
   background-color: $bandsite-black;
+  padding: 1.5rem;
+  color: $white;
+
+  &__header-container {
+  }
+
+  &__secondary-container {
+  }
+
+  &__header {
+    font-weight: 600;
+    padding: 2rem 0 1.6rem 0;
+  }
+
+  &__icon-list {
+    padding: 0 0 1.5rem 0;
+  }
+
+  &__icon {
+    margin-right: 2.6rem;
+  }
+
+  &__logo--tablet {
+    display: none;
+    @include logo;
+  }
+
+  &__contact-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__contact-card {
+    padding: 1.7rem 0;
+  }
+
+  &__contact-name {
+    font-weight: 600;
+    padding: 0 0 1.9rem 0;
+  }
+
+  &__contact-area {
+    padding: 0 0 1.9rem 0;
+  }
+
+  &__contact-email {
+  }
+
+  &__copy-logo {
+    margin-top: 3rem;
+  }
+
+  &__logo--mobile {
+    @include logo;
+  }
+
+  &__copyright {
+    font-size: 1.1rem;
+  }
 }
