@@ -2,6 +2,8 @@
 @use './partials/base' as *;
 @use './partials/mediaqueries' as *;
 
+// top navigation
+
 .header-nav {
   display: flex;
   flex-direction: column;
@@ -25,14 +27,14 @@
   //   padding: 0 0 2rem 0;
 }
 
-.header-nav__list-relative {
+.header-nav__list--relative {
   position: relative;
   text-align: center;
   width: 100%;
   height: 4rem;
 }
 
-.header-nav__list-absolute:hover::after {
+.header-nav__list--absolute:hover::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -44,4 +46,87 @@
 
 .header-nav__list-item {
   //   padding: 0 0 1rem 0;
+}
+
+// hero header
+.hero {
+  display: flex;
+  align-items: center;
+  background-image: linear-gradient(
+      rgba(50, 50, 50, 0.5),
+      rgba(50, 50, 50, 0.5)
+    ),
+    url(../assets/images/hero-bio.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 38vh;
+}
+
+.hero__header {
+  color: $white;
+  font-weight: 600;
+  margin: 0 0 0 2rem;
+}
+
+// about section
+.about {
+}
+
+.about__header {
+  padding: 2.4rem 0 1.6rem 0;
+  font-weight: 600;
+}
+
+.about__img {
+  height: auto;
+  width: 100%;
+}
+
+.about__quote {
+  padding: 1.6rem 0;
+  font-weight: 600;
+}
+
+.about__quote-author {
+  padding: 0 0 1.6rem 0;
+  font-weight: 600;
+}
+
+.about__bio-header {
+  padding: 1.5rem 0 1.3rem 0;
+  font-weight: 400;
+  font-size: 1.7rem;
+  color: $bandsite-darkblack;
+}
+
+.about__bio-container {
+}
+
+.about__bio-paragraph {
+  padding: 0 0 1.3rem 0;
+}
+
+// photo gallery
+
+.gallery {
+}
+
+.gallery__header {
+  font-weight: 600;
+  padding: 1.5rem 0 1.3rem 0;
+}
+
+.gallery__photo-list {
+}
+
+.gallery__photo {
+  height: auto;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+// footer
+
+.footer {
+  background-color: $bandsite-black;
 }
