@@ -137,11 +137,11 @@ button {
     justify-content: flex-start;
   }
   .header-nav__logo {
-    padding: 2.2rem 0 2rem 2rem;
+    padding: 2.2rem 0 2rem 2.5rem;
   }
   .header-nav__list {
     width: 40%;
-    margin-left: 4rem;
+    margin-left: 3.5rem;
   }
   .header-nav__list--relative {
     height: 100%;
@@ -152,6 +152,23 @@ button {
   .header-nav__list-item {
     display: flex;
     align-self: center;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .header-nav__logo {
+    padding: 2.8rem 0 2rem 4rem;
+  }
+  .header-nav__list {
+    width: 30%;
+    margin-left: 5rem;
+  }
+  .header-nav__list--absolute-bio:hover::after {
+    width: 65%;
+    left: 2.1rem;
+  }
+  .header-nav__list--absolute-show:hover::after {
+    width: 43%;
+    left: 3.3rem;
   }
 }
 
@@ -174,6 +191,15 @@ button {
   }
   .hero__header {
     font-size: 3.5rem;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .hero {
+    height: 60vh;
+  }
+  .hero__header {
+    font-size: 5.5rem;
+    margin-left: 4rem;
   }
 }
 
@@ -222,6 +248,39 @@ button {
     width: 90%;
   }
 }
+@media only screen and (min-width: 768px) {
+  .about__header {
+    font-size: 4.5rem;
+    padding: 4.5rem 0 2.6rem 2rem;
+  }
+  .about__container {
+    width: 80%;
+  }
+  .about__quote {
+    font-size: 2.2rem;
+    line-height: 3rem;
+    word-spacing: 0.3rem;
+    padding: 2.8rem 0 2.4rem 0;
+  }
+  .about__quote-author {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+  .about__bio-header {
+    font-weight: 600;
+    font-size: 2.5rem;
+  }
+  .about__bio-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.7rem 0;
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+  }
+  .about__bio-paragraph:first-child {
+    margin-right: 2rem;
+  }
+}
 
 .gallery {
   display: flex;
@@ -242,7 +301,7 @@ button {
 }
 .gallery__photo {
   height: auto;
-  width: 98%;
+  width: 100%;
   margin-bottom: 1rem;
 }
 @media only screen and (min-width: 500px) {
@@ -255,6 +314,19 @@ button {
   }
   .gallery__photo {
     margin-bottom: 2rem;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .gallery__photo-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 1.5rem 0 3rem 0;
+  }
+  .gallery__photo {
+    width: 30%;
+    height: auto;
+    margin-right: 2rem;
   }
 }
 
@@ -276,7 +348,9 @@ button {
   margin-right: 2.6rem;
 }
 .footer__logo--tablet {
-  display: none;
+  position: absolute;
+  left: -100%;
+  visibility: hidden;
   padding: 2.2rem 0 1.2rem 0;
   min-height: 1.5rem;
   min-width: 10rem;
@@ -309,6 +383,48 @@ button {
 @media only screen and (min-width: 500px) {
   .footer__container {
     width: 90%;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .footer__header-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer__secondary-container {
+    display: flex;
+  }
+  .footer__icon-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2.5rem 0 1.6rem 3.5rem;
+  }
+  .footer__icon {
+    width: auto;
+    height: 2.5rem;
+    margin-right: 3.5rem;
+  }
+  .footer__logo--tablet {
+    position: initial;
+    display: flex;
+    visibility: visible;
+  }
+  .footer__contact-list {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .footer__logo--mobile {
+    position: absolute;
+    visibility: hidden;
+    left: -100%;
+  }
+  .footer__copyright {
+    font-size: 1.3rem;
+    padding-bottom: 2rem;
   }
 }
 
