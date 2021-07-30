@@ -96,6 +96,33 @@
       left: 3.3rem;
     }
   }
+
+  @include desktop {
+    &__logo {
+      padding: 3.4rem 0 3rem 12rem;
+    }
+
+    &__list {
+      width: 20%;
+      margin-left: 7rem;
+    }
+
+    &__list-item {
+      font-size: 1.7rem;
+    }
+
+    &__list--absolute-bio:hover::after {
+      width: 70%;
+      left: 2rem;
+      bottom: -3.3rem;
+    }
+
+    &__list--absolute-show:hover::after {
+      width: 47%;
+      left: 3.6rem;
+      bottom: -3.3rem;
+    }
+  }
 }
 
 // hero header
@@ -135,6 +162,13 @@
     &__header {
       font-size: 5.5rem;
       margin-left: 4rem;
+    }
+  }
+
+  @include desktop {
+    &__header {
+      font-size: 5.5rem;
+      margin-left: 12rem;
     }
   }
 }
@@ -235,6 +269,39 @@
     &__bio-paragraph:first-child {
       margin-right: 2rem;
     }
+
+    @include desktop {
+      &__header {
+        padding-left: 0;
+        padding-top: 5rem;
+        padding-bottom: 3.5rem;
+        margin-left: 12rem;
+      }
+
+      &__container {
+        width: 68%;
+      }
+
+      &__quote {
+        padding-top: 3.5rem;
+        font-size: 2.3rem;
+        width: 85%;
+      }
+
+      &__quote-author {
+        font-size: 1.8rem;
+        margin-bottom: 2.5rem;
+      }
+
+      &__bio-header {
+        font-size: 2.8rem;
+        margin-bottom: 1.8rem;
+      }
+
+      &__bio-paragraph {
+        padding-bottom: 3rem;
+      }
+    }
   }
 }
 
@@ -286,6 +353,13 @@
       width: 30%;
       height: auto;
       margin-right: 2rem;
+    }
+  }
+
+  @include desktop {
+    &__header {
+      padding-left: 0;
+      width: 85%;
     }
   }
 }
@@ -414,6 +488,29 @@
     &__copyright {
       font-size: 1.3rem;
       padding-bottom: 2rem;
+    }
+  }
+
+  @include desktop {
+    &__container {
+      width: 85%;
+    }
+
+    &__contact-list {
+      justify-content: flex-start;
+    }
+
+    &__contact-card {
+      margin-right: 8rem;
+    }
+
+    &__logo--tablet {
+      margin-right: 1.8rem;
+    }
+
+    &__copyright {
+      font-size: 1.4rem;
+      padding-bottom: 2.8rem;
     }
   }
 }

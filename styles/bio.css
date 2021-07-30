@@ -171,6 +171,28 @@ button {
     left: 3.3rem;
   }
 }
+@media only screen and (min-width: 1280px) {
+  .header-nav__logo {
+    padding: 3.4rem 0 3rem 12rem;
+  }
+  .header-nav__list {
+    width: 20%;
+    margin-left: 7rem;
+  }
+  .header-nav__list-item {
+    font-size: 1.7rem;
+  }
+  .header-nav__list--absolute-bio:hover::after {
+    width: 70%;
+    left: 2rem;
+    bottom: -3.3rem;
+  }
+  .header-nav__list--absolute-show:hover::after {
+    width: 47%;
+    left: 3.6rem;
+    bottom: -3.3rem;
+  }
+}
 
 .hero {
   display: flex;
@@ -200,6 +222,12 @@ button {
   .hero__header {
     font-size: 5.5rem;
     margin-left: 4rem;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .hero__header {
+    font-size: 5.5rem;
+    margin-left: 12rem;
   }
 }
 
@@ -281,6 +309,33 @@ button {
     margin-right: 2rem;
   }
 }
+@media only screen and (min-width: 768px) and (min-width: 1280px) {
+  .about__header {
+    padding-left: 0;
+    padding-top: 5rem;
+    padding-bottom: 3.5rem;
+    margin-left: 12rem;
+  }
+  .about__container {
+    width: 68%;
+  }
+  .about__quote {
+    padding-top: 3.5rem;
+    font-size: 2.3rem;
+    width: 85%;
+  }
+  .about__quote-author {
+    font-size: 1.8rem;
+    margin-bottom: 2.5rem;
+  }
+  .about__bio-header {
+    font-size: 2.8rem;
+    margin-bottom: 1.8rem;
+  }
+  .about__bio-paragraph {
+    padding-bottom: 3rem;
+  }
+}
 
 .gallery {
   display: flex;
@@ -327,6 +382,12 @@ button {
     width: 30%;
     height: auto;
     margin-right: 2rem;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .gallery__header {
+    padding-left: 0;
+    width: 85%;
   }
 }
 
@@ -425,6 +486,24 @@ button {
   .footer__copyright {
     font-size: 1.3rem;
     padding-bottom: 2rem;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .footer__container {
+    width: 85%;
+  }
+  .footer__contact-list {
+    justify-content: flex-start;
+  }
+  .footer__contact-card {
+    margin-right: 8rem;
+  }
+  .footer__logo--tablet {
+    margin-right: 1.8rem;
+  }
+  .footer__copyright {
+    font-size: 1.4rem;
+    padding-bottom: 2.8rem;
   }
 }
 
