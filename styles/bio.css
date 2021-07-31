@@ -162,13 +162,16 @@ button {
     width: 30%;
     margin-left: 5rem;
   }
+  .header-nav__list--relative {
+    width: auto;
+  }
   .header-nav__list--absolute-bio:hover::after {
-    width: 65%;
-    left: 2.1rem;
+    left: 0;
+    bottom: -114%;
   }
   .header-nav__list--absolute-show:hover::after {
-    width: 43%;
-    left: 3.3rem;
+    left: 0;
+    bottom: -114%;
   }
 }
 @media only screen and (min-width: 1280px) {
@@ -183,14 +186,10 @@ button {
     font-size: 1.7rem;
   }
   .header-nav__list--absolute-bio:hover::after {
-    width: 70%;
-    left: 2rem;
-    bottom: -3.3rem;
+    bottom: -150%;
   }
   .header-nav__list--absolute-show:hover::after {
-    width: 47%;
-    left: 3.6rem;
-    bottom: -3.3rem;
+    bottom: -150%;
   }
 }
 
