@@ -1,0 +1,234 @@
+@use './partial' as *;
+@use './base' as *;
+
+// top navigation
+
+.header-nav {
+  @include flex-column;
+  background-color: $bandsite-black;
+
+  &__logo {
+    @include logo;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  &__list--relative {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    height: 4rem;
+  }
+
+  &__list--absolute:hover::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0.3rem;
+    background-color: $white;
+    left: 0;
+    bottom: 0;
+  }
+
+  &__list-item {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+  }
+
+  &__list-item--shows:active::after,
+  &__list-item--shows:link::after,
+  &__list-item--shows:visited::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0.3rem;
+    background-color: $white;
+    left: 0;
+    bottom: 0;
+  }
+
+  @include mobile-adjusted {
+    & {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+    }
+
+    &__logo {
+      padding: 2.2rem 0 2rem 2.5rem;
+    }
+
+    &__list {
+      width: 40%;
+      margin-left: 3.5rem;
+    }
+
+    // &__list-item {
+    // }
+
+    &__list--relative {
+      height: 100%;
+      // width: 100%;
+    }
+
+    &__list--absolute:hover::after {
+      bottom: -2.3rem;
+    }
+
+    &__list-item {
+      display: flex;
+      align-self: center;
+    }
+  }
+
+  @include tablet {
+    &__logo {
+      padding: 2.8rem 0 2rem 4rem;
+    }
+
+    &__list {
+      width: 30%;
+      margin-left: 5rem;
+    }
+
+    &__list--relative {
+      width: auto;
+    }
+
+    // &__list-item {
+    // }
+
+    &__list--absolute-bio:hover::after {
+      // width: 65%;
+      // left: 2.1rem;
+      left: 0;
+      bottom: -114%;
+    }
+
+    &__list--absolute-show:hover::after {
+      // width: 43%;
+      // left: 3.3rem;
+      left: 0;
+      bottom: -114%;
+
+      // bottom: 0;
+    }
+  }
+
+  @include desktop {
+    &__logo {
+      padding: 3.4rem 0 3rem 12rem;
+    }
+
+    &__list {
+      width: 20%;
+      margin-left: 7rem;
+    }
+
+    &__list-item {
+      font-size: 1.7rem;
+    }
+
+    &__list--absolute-bio:hover::after {
+      bottom: -150%;
+    }
+
+    &__list--absolute-show:hover::after {
+      bottom: -150%;
+    }
+  }
+}
+
+// hero header
+.hero {
+  display: flex;
+  align-items: center;
+
+  &--bio {
+    background-image: linear-gradient(
+        rgba(50, 50, 50, 0.5),
+        rgba(50, 50, 50, 0.5)
+      ),
+      url(../assets/images/hero-bio.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 40vh;
+    padding: 0 2rem;
+  }
+
+  &--shows {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 4rem 2rem;
+    color: $white;
+    background-image: linear-gradient(
+        rgba(50, 50, 50, 0.5),
+        rgba(50, 50, 50, 0.5)
+      ),
+      url(../../assets/images/hero-shows.jpg);
+    background-position: center;
+    background-size: cover;
+    // height: 55vh;
+    // width: auto;
+  }
+
+  &__header {
+    color: $white;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  &__header-secondary {
+    margin: 0;
+    font-weight: 400;
+    font-size: 1.5rem;
+  }
+
+  &__header--width {
+    width: 70%;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  &__soundcloud {
+    min-width: 96%;
+    max-width: 100%;
+    margin: 0 auto;
+    height: auto;
+  }
+
+  @include mobile-adjusted {
+    & {
+      height: 54vh;
+    }
+
+    &__header {
+      font-size: 3.5rem;
+    }
+  }
+
+  @include tablet {
+    & {
+      height: 60vh;
+    }
+
+    &__header {
+      font-size: 5.5rem;
+      margin-left: 4rem;
+    }
+  }
+
+  @include desktop {
+    &__header {
+      font-size: 5.5rem;
+      margin-left: 12rem;
+    }
+  }
+}

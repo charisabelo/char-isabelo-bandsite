@@ -1,0 +1,19 @@
+@use './partials/partial' as *;
+@use './partials/base' as *;
+@use './partials/header' as *;
+@use './partials/footer' as *;
+
+.shows {
+  min-height: 60vh;
+
+  &__header {
+    padding: 4.2rem 0;
+    color: $bandsite-darkblack;
+    font-size: 5rem;
+    font-weight: 600;
+  }
+
+  &__list {
+    @include flex-column;
+  }
+}

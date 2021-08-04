@@ -1,0 +1,153 @@
+@use './partial' as *;
+@use './base' as *;
+
+// footer
+
+.footer {
+  display: flex;
+  justify-content: center;
+  background-color: $bandsite-black;
+  padding: 1.5rem;
+  color: $white;
+
+  // &__container {
+  // }
+
+  // &__header-container {
+  // }
+
+  // &__secondary-container {
+  // }
+
+  &__header {
+    font-weight: 600;
+    padding: 2rem 0 1.6rem 0;
+  }
+
+  &__icon-list {
+    padding: 0 0 1.5rem 0;
+  }
+
+  &__icon {
+    margin-right: 2.6rem;
+  }
+
+  &__logo--tablet {
+    position: absolute;
+    left: -100%;
+    visibility: hidden;
+    @include logo;
+  }
+
+  &__contact-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__contact-card {
+    padding: 1.7rem 0;
+  }
+
+  &__contact-name {
+    font-weight: 600;
+    padding: 0 0 1.9rem 0;
+  }
+
+  &__contact-area {
+    padding: 0 0 1.9rem 0;
+  }
+
+  // &__contact-email {
+  // }
+
+  &__copy-logo {
+    margin-top: 3rem;
+  }
+
+  &__logo--mobile {
+    @include logo;
+  }
+
+  &__copyright {
+    font-size: 1.1rem;
+  }
+
+  @include mobile-adjusted {
+    &__container {
+      width: 90%;
+    }
+  }
+
+  @include tablet {
+    &__header-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__secondary-container {
+      display: flex;
+    }
+
+    &__icon-list {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2.5rem 0 1.6rem 3.5rem;
+    }
+
+    &__icon {
+      width: auto;
+      height: 2.5rem;
+      margin-right: 3.5rem;
+    }
+
+    &__logo--tablet {
+      position: initial;
+      display: flex;
+      visibility: visible;
+    }
+
+    &__contact-list {
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    &__logo--mobile {
+      position: absolute;
+      visibility: hidden;
+      left: -100%;
+    }
+
+    &__copyright {
+      font-size: 1.3rem;
+      padding-bottom: 2rem;
+    }
+  }
+
+  @include desktop {
+    &__container {
+      width: 85%;
+    }
+
+    &__contact-list {
+      justify-content: flex-start;
+    }
+
+    &__contact-card {
+      margin-right: 8rem;
+    }
+
+    &__logo--tablet {
+      margin-right: 1.8rem;
+    }
+
+    &__copyright {
+      font-size: 1.4rem;
+      padding-bottom: 2.8rem;
+    }
+  }
+}
