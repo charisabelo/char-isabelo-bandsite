@@ -80,6 +80,12 @@
       bottom: -2.3rem;
     }
 
+    &__list-item--shows:active::after,
+    &__list-item--shows:link::after,
+    &__list-item--shows:visited::after {
+      bottom: -2.3rem;
+    }
+
     &__list-item {
       display: flex;
       align-self: center;
@@ -107,16 +113,22 @@
       // width: 65%;
       // left: 2.1rem;
       left: 0;
-      bottom: -114%;
+      bottom: -2.55rem;
     }
 
     &__list--absolute-show:hover::after {
       // width: 43%;
       // left: 3.3rem;
       left: 0;
-      bottom: -114%;
+      bottom: -2.55rem;
 
       // bottom: 0;
+    }
+
+    &__list-item--shows:active::after,
+    &__list-item--shows:link::after,
+    &__list-item--shows:visited::after {
+      bottom: -2.65rem;
     }
   }
 
@@ -135,11 +147,23 @@
     }
 
     &__list--absolute-bio:hover::after {
-      bottom: -150%;
+      bottom: -155%;
+      // bottom: -185%;
     }
 
     &__list--absolute-show:hover::after {
-      bottom: -150%;
+      bottom: -155%;
+    }
+
+    &__list-item--shows:active::after,
+    &__list-item--shows:link::after,
+    &__list-item--shows:visited::after {
+      bottom: -185%;
+    }
+
+    &__list--absolute--adjust:hover::after,
+    &__list--absolute-show:hover::after {
+      bottom: -3.3rem;
     }
   }
 }
@@ -209,8 +233,22 @@
       height: 54vh;
     }
 
+    &--shows {
+      height: auto;
+    }
+
     &__header {
       font-size: 3.5rem;
+    }
+
+    &__header--width {
+      padding-bottom: 3rem;
+    }
+
+    &__soundcloud {
+      min-width: 80%;
+      max-width: 90%;
+      margin: 0;
     }
   }
 
@@ -219,9 +257,36 @@
       height: 60vh;
     }
 
+    &--shows {
+      height: auto;
+      padding-top: 7rem;
+      padding-bottom: 7rem;
+    }
+
     &__header {
       font-size: 5.5rem;
       margin-left: 4rem;
+    }
+
+    &__header-secondary {
+      margin-left: 2rem;
+      font-size: 3.2rem;
+      font-weight: 400;
+    }
+
+    &__header--width {
+      line-height: 6rem;
+      margin-left: 2rem;
+      font-size: 7rem;
+      width: 85%;
+      padding-top: 3.3rem;
+      line-height: 7.8rem;
+    }
+
+    &__soundcloud {
+      margin-left: 2rem;
+      margin-top: 4rem;
+      min-width: 65%;
     }
   }
 
@@ -229,6 +294,32 @@
     &__header {
       font-size: 5.5rem;
       margin-left: 12rem;
+    }
+
+    &__header-secondary {
+      margin-left: 0;
+      padding-left: 0;
+    }
+
+    &__header--width {
+      margin-left: 0;
+      padding-left: 0;
+      font-size: 6.2rem;
+    }
+
+    &--shows {
+      height: 80vh;
+      @include flex-row;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      padding-left: 12rem;
+      padding-right: 12rem;
+    }
+    &__soundcloud {
+      // margin-left: 2rem;
+      // margin-top: 4rem;
+      min-width: 40%;
     }
   }
 }

@@ -158,6 +158,9 @@ button {
   .header-nav__list--absolute:hover::after {
     bottom: -2.3rem;
   }
+  .header-nav__list-item--shows:active::after, .header-nav__list-item--shows:link::after, .header-nav__list-item--shows:visited::after {
+    bottom: -2.3rem;
+  }
   .header-nav__list-item {
     display: flex;
     align-self: center;
@@ -176,11 +179,14 @@ button {
   }
   .header-nav__list--absolute-bio:hover::after {
     left: 0;
-    bottom: -114%;
+    bottom: -2.55rem;
   }
   .header-nav__list--absolute-show:hover::after {
     left: 0;
-    bottom: -114%;
+    bottom: -2.55rem;
+  }
+  .header-nav__list-item--shows:active::after, .header-nav__list-item--shows:link::after, .header-nav__list-item--shows:visited::after {
+    bottom: -2.65rem;
   }
 }
 @media only screen and (min-width: 1280px) {
@@ -195,10 +201,16 @@ button {
     font-size: 1.7rem;
   }
   .header-nav__list--absolute-bio:hover::after {
-    bottom: -150%;
+    bottom: -155%;
   }
   .header-nav__list--absolute-show:hover::after {
-    bottom: -150%;
+    bottom: -155%;
+  }
+  .header-nav__list-item--shows:active::after, .header-nav__list-item--shows:link::after, .header-nav__list-item--shows:visited::after {
+    bottom: -185%;
+  }
+  .header-nav__list--absolute--adjust:hover::after, .header-nav__list--absolute-show:hover::after {
+    bottom: -3.3rem;
   }
 }
 
@@ -249,23 +261,79 @@ button {
   .hero {
     height: 54vh;
   }
+  .hero--shows {
+    height: auto;
+  }
   .hero__header {
     font-size: 3.5rem;
+  }
+  .hero__header--width {
+    padding-bottom: 3rem;
+  }
+  .hero__soundcloud {
+    min-width: 80%;
+    max-width: 90%;
+    margin: 0;
   }
 }
 @media only screen and (min-width: 768px) {
   .hero {
     height: 60vh;
   }
+  .hero--shows {
+    height: auto;
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
   .hero__header {
     font-size: 5.5rem;
     margin-left: 4rem;
+  }
+  .hero__header-secondary {
+    margin-left: 2rem;
+    font-size: 3.2rem;
+    font-weight: 400;
+  }
+  .hero__header--width {
+    line-height: 6rem;
+    margin-left: 2rem;
+    font-size: 7rem;
+    width: 85%;
+    padding-top: 3.3rem;
+    line-height: 7.8rem;
+  }
+  .hero__soundcloud {
+    margin-left: 2rem;
+    margin-top: 4rem;
+    min-width: 65%;
   }
 }
 @media only screen and (min-width: 1280px) {
   .hero__header {
     font-size: 5.5rem;
     margin-left: 12rem;
+  }
+  .hero__header-secondary {
+    margin-left: 0;
+    padding-left: 0;
+  }
+  .hero__header--width {
+    margin-left: 0;
+    padding-left: 0;
+    font-size: 6.2rem;
+  }
+  .hero--shows {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding-left: 12rem;
+    padding-right: 12rem;
+  }
+  .hero__soundcloud {
+    min-width: 40%;
   }
 }
 
