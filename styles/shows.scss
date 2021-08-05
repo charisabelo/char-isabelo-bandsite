@@ -5,15 +5,144 @@
 
 .shows {
   min-height: 60vh;
+  padding-bottom: 2rem;
 
   &__header {
-    padding: 4.2rem 0;
+    padding: 4rem 0 1.9rem 0;
     color: $bandsite-darkblack;
     font-size: 5rem;
     font-weight: 600;
   }
 
   &__list {
-    @include flex-column;
+    display: flex;
+    flex-direction: column;
+  }
+
+  // shows card
+  &__list-details {
+    position: absolute;
+    visibility: hidden;
+  }
+
+  &__list-card {
+    padding: 1.8rem 0;
+    border-bottom: solid 1px $mercury;
+  }
+
+  &__dates,
+  &__venue,
+  &__location {
+    color: $silver;
+    padding-bottom: 0.8rem;
+    font-weight: 600;
+  }
+
+  &__dates-name {
+    font-weight: 600;
+  }
+
+  &__dates-name,
+  &__venue-name,
+  &__location-name {
+    font-size: 1.8rem;
+  }
+
+  &__dates-container,
+  &__venue-container,
+  &__location-container {
+    margin-bottom: 2.2rem;
+  }
+
+  &__btn {
+    border: none;
+    background-color: $bandsite-black;
+    color: $white;
+    width: 100%;
+    padding: 1.5rem 0;
+    border-radius: 0.5rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+  }
+
+  @include mobile-adjusted {
+    &__btn {
+      max-width: 18rem;
+    }
+  }
+
+  @include tablet {
+    & {
+      padding: 0 2rem 5rem 2rem;
+    }
+
+    &__header {
+      padding: 6.4rem 0;
+    }
+
+    &__list-card {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.9rem 0;
+    }
+
+    &__list-details--tablet {
+      position: initial;
+      visibility: visible;
+      display: flex;
+      color: $mercury;
+    }
+
+    &__tablet--hidden {
+      position: absolute;
+      visibility: hidden;
+    }
+
+    &__dates-container,
+    &__venue-container,
+    &__location-container {
+      width: 25%;
+      display: flex;
+      align-items: center;
+      margin-bottom: 0;
+    }
+
+    &__dates,
+    &__venue,
+    &__location {
+      width: 25%;
+    }
+
+    &__dates-name,
+    &__venue-name,
+    &__location-name {
+      font-size: 1.6rem;
+    }
+
+    &__btn {
+      max-width: 17rem;
+    }
+
+    @include desktop {
+      & {
+        display: flex;
+        width: auto;
+        padding: 6.4rem 10rem 6rem 10rem;
+      }
+
+      &__header {
+        padding: 0;
+        margin-right: 10rem;
+      }
+
+      &__list {
+        width: 100%;
+      }
+
+      &__list-details--tablet {
+        padding-top: 1rem;
+      }
+    }
   }
 }

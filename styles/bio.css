@@ -437,6 +437,8 @@ button {
 @media only screen and (min-width: 1280px) {
   .footer__container {
     width: 85%;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
   }
   .footer__contact-list {
     justify-content: flex-start;

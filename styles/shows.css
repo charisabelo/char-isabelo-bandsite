@@ -437,6 +437,8 @@ button {
 @media only screen and (min-width: 1280px) {
   .footer__container {
     width: 85%;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
   }
   .footer__contact-list {
     justify-content: flex-start;
@@ -455,9 +457,10 @@ button {
 
 .shows {
   min-height: 60vh;
+  padding-bottom: 2rem;
 }
 .shows__header {
-  padding: 4.2rem 0;
+  padding: 4rem 0 1.9rem 0;
   color: #000000;
   font-size: 5rem;
   font-weight: 600;
@@ -465,6 +468,97 @@ button {
 .shows__list {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+}
+.shows__list-details {
+  position: absolute;
+  visibility: hidden;
+}
+.shows__list-card {
+  padding: 1.8rem 0;
+  border-bottom: solid 1px #e1e1e1;
+}
+.shows__dates, .shows__venue, .shows__location {
+  color: #afafaf;
+  padding-bottom: 0.8rem;
+  font-weight: 600;
+}
+.shows__dates-name {
+  font-weight: 600;
+}
+.shows__dates-name, .shows__venue-name, .shows__location-name {
+  font-size: 1.8rem;
+}
+.shows__dates-container, .shows__venue-container, .shows__location-container {
+  margin-bottom: 2.2rem;
+}
+.shows__btn {
+  border: none;
+  background-color: #323232;
+  color: #ffffff;
+  width: 100%;
+  padding: 1.5rem 0;
+  border-radius: 0.5rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+@media only screen and (min-width: 500px) {
+  .shows__btn {
+    max-width: 18rem;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .shows {
+    padding: 0 2rem 5rem 2rem;
+  }
+  .shows__header {
+    padding: 6.4rem 0;
+  }
+  .shows__list-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.9rem 0;
+  }
+  .shows__list-details--tablet {
+    position: initial;
+    visibility: visible;
+    display: flex;
+    color: #e1e1e1;
+  }
+  .shows__tablet--hidden {
+    position: absolute;
+    visibility: hidden;
+  }
+  .shows__dates-container, .shows__venue-container, .shows__location-container {
+    width: 25%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+  }
+  .shows__dates, .shows__venue, .shows__location {
+    width: 25%;
+  }
+  .shows__dates-name, .shows__venue-name, .shows__location-name {
+    font-size: 1.6rem;
+  }
+  .shows__btn {
+    max-width: 17rem;
+  }
+}
+@media only screen and (min-width: 768px) and (min-width: 1280px) {
+  .shows {
+    display: flex;
+    width: auto;
+    padding: 6.4rem 10rem 6rem 10rem;
+  }
+  .shows__header {
+    padding: 0;
+    margin-right: 10rem;
+  }
+  .shows__list {
+    width: 100%;
+  }
+  .shows__list-details--tablet {
+    padding-top: 1rem;
+  }
 }
