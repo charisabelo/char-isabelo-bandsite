@@ -323,7 +323,7 @@ button {
     font-size: 6.2rem;
   }
   .hero--shows {
-    height: 80vh;
+    height: 84rem;
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -456,7 +456,6 @@ button {
 }
 
 .shows {
-  min-height: 60vh;
   padding-bottom: 2rem;
 }
 .shows__header {

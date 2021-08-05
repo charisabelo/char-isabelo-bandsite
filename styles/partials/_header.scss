@@ -199,8 +199,6 @@
       url(../../assets/images/hero-shows.jpg);
     background-position: center;
     background-size: cover;
-    // height: 55vh;
-    // width: auto;
   }
 
   &__header {
@@ -308,7 +306,7 @@
     }
 
     &--shows {
-      height: 80vh;
+      height: 84rem;
       @include flex-row;
       flex-direction: row;
       justify-content: space-around;
@@ -317,8 +315,6 @@
       padding-right: 12rem;
     }
     &__soundcloud {
-      // margin-left: 2rem;
-      // margin-top: 4rem;
       min-width: 40%;
     }
   }
