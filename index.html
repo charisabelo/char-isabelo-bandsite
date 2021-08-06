@@ -10,7 +10,7 @@
   <body>
     <header class="header">
       <nav class="header-nav">
-        <a href="./index.html">
+        <a href="/">
           <img
             class="header-nav__logo"
             src="./assets/logo/Logo-bandsite.svg"
@@ -22,9 +22,7 @@
             <div
               class="header-nav__list--absolute header-nav__list--absolute-bio"
             >
-              <a class="header-nav__list-item" href="./index.html">
-                Biography
-              </a>
+              <a class="header-nav__list-item" href="/"> Biography </a>
             </div>
           </div>
           <div class="header-nav__list--relative">
@@ -137,6 +135,88 @@
           />
         </div>
       </section>
+
+      <section class="comments comments--width">
+        <h2 class="comments__header">Join the Conversation</h2>
+        <div class="comments__header-container">
+          <div class="comments__form-container">
+            <div class="comments__img"></div>
+            <form class="comments__form" autocomplete="off">
+              <div class="comments__form-name">
+                <label class="comments__name" for="name">NAME</label>
+                <input
+                  class="comments__name-input"
+                  type="text"
+                  placeholder="Enter your name"
+                  name="name"
+                />
+              </div>
+              <div class="comments__form-text">
+                <label class="comments__text-label" for="comment"
+                  >COMMENT</label
+                >
+                <textarea
+                  class="comments__form-comment"
+                  name="comment"
+                  id="comment"
+                  placeholder="Add a new comment"
+                ></textarea>
+              </div>
+              <div class="comments__btn-container">
+                <input class="comments__btn" type="submit" value="COMMENT" />
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="comments__list">
+          <div class="comments__list-card">
+            <div class="comments__list-img"></div>
+            <div class="comments__list-details">
+              <div class="comments__list-user">
+                <p class="comments__user-name">Connor Walton</p>
+                <p class="comments__user-date">02/17/2021</p>
+              </div>
+              <p class="comments__list-text">
+                This is art. This is inexplicable magic expressed in the purest
+                way, everything that makes up this majestic work deserves
+                reverence. Let us appreciate this for what it is and what it
+                contains.
+              </p>
+            </div>
+          </div>
+          <div class="comments__list-card">
+            <div class="comments__list-img"></div>
+            <div class="comments__list-details">
+              <div class="comments__list-user">
+                <p class="comments__user-name">Connor Walton</p>
+                <p class="comments__user-date">02/17/2021</p>
+              </div>
+              <p class="comments__list-text">
+                This is art. This is inexplicable magic expressed in the purest
+                way, everything that makes up this majestic work deserves
+                reverence. Let us appreciate this for what it is and what it
+                contains.
+              </p>
+            </div>
+          </div>
+          <div class="comments__list-card">
+            <div class="comments__list-img"></div>
+            <div class="comments__list-details">
+              <div class="comments__list-user">
+                <p class="comments__user-name">Connor Walton</p>
+                <p class="comments__user-date">02/17/2021</p>
+              </div>
+              <p class="comments__list-text">
+                This is art. This is inexplicable magic expressed in the purest
+                way, everything that makes up this majestic work deserves
+                reverence. Let us appreciate this for what it is and what it
+                contains.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="footer">
@@ -162,7 +242,7 @@
               />
             </div>
           </div>
-          <a href="./index.html">
+          <a href="/">
             <img
               class="footer__logo--tablet footer__logo--visible"
               src="./assets/logo/Logo-bandsite.svg"

@@ -1,4 +1,4 @@
-/* adjustment for mobile / smaller screen */
+/* adjustment breakpoint */
 * {
   margin: 0;
   padding: 0;
@@ -612,6 +612,199 @@ button {
   .gallery__header {
     padding-left: 0;
     width: 85%;
+  }
+}
+
+.comments {
+  padding: 1.8rem 0 2rem 0;
+}
+.comments__header {
+  display: flex;
+  align-self: flex-start;
+  font-weight: 600;
+  padding-bottom: 1.5rem;
+}
+.comments__img {
+  width: 3.8rem;
+  height: 3.8rem;
+  border-radius: 50%;
+  background-image: url(../assets/images/Mohan-muruge.jpg);
+  background-position: center;
+  background-size: cover;
+  margin-top: 2.5rem;
+}
+.comments__form-container {
+  display: flex;
+  min-width: 100%;
+  justify-content: space-between;
+  padding-bottom: 1.8rem;
+  border-bottom: solid 1px #e1e1e1;
+}
+.comments__form {
+  display: flex;
+  flex-direction: column;
+  min-width: 81%;
+}
+.comments__form-name, .comments__form-text {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1.8rem;
+}
+.comments__name, .comments__text-label {
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #afafaf;
+}
+.comments__name-input, .comments__form-comment {
+  padding: 1.4rem 0 1.4rem 1.2rem;
+  border: solid 0.1rem #e1e1e1;
+  border-radius: 0.5rem;
+}
+.comments__name-input::placeholder, .comments__form-comment::placeholder {
+  color: #323232;
+  font-size: 1.5rem;
+  font-family: "avenir", sans-serif;
+}
+.comments__form-text {
+  display: flex;
+  flex-direction: column;
+}
+.comments__btn {
+  border: none;
+  background-color: #323232;
+  color: #fafafa;
+  width: 100%;
+  padding: 1.5rem 0;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.comments__list-card {
+  display: flex;
+  padding: 2rem 0;
+  border-bottom: solid 1px #e1e1e1;
+  justify-content: space-between;
+}
+.comments__list-img {
+  width: 3.8rem;
+  height: 3.8rem;
+  border-radius: 50%;
+  background-color: #e1e1e1;
+}
+.comments__list-details {
+  display: flex;
+  flex-direction: column;
+  width: 81%;
+}
+.comments__list-user {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+}
+.comments__user-name {
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+.comments__user-date {
+  font-size: 1.4rem;
+  color: #afafaf;
+}
+@media only screen and (min-width: 500px) {
+  .comments__form-container {
+    justify-content: space-evenly;
+  }
+  .comments__list-card {
+    justify-content: space-evenly;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .comments.comments--width {
+    padding-bottom: 4.7rem;
+    margin: 0 auto;
+    width: 90%;
+  }
+  .comments__header {
+    margin-top: 2.5rem;
+    margin-bottom: 2.7rem;
+  }
+  .comments__img {
+    width: 4.8rem;
+    height: 4.8rem;
+  }
+  .comments__name, .comments__text-label {
+    font-size: 1.3rem;
+  }
+  .comments__name-input, .comments__form-comment {
+    padding: 1.8rem 0 1.8rem 1.8rem;
+  }
+  .comments__form-comment {
+    height: 11rem;
+  }
+  .comments__btn-container {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .comments__btn {
+    width: 22rem;
+    margin: 2rem 0;
+    font-size: 1.8rem;
+  }
+  .comments__list-img {
+    width: 4.8rem;
+    height: 4.8rem;
+  }
+  .comments__user-name, .comments__user-date, .comments__list-text {
+    font-size: 1.6rem;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .comments.comments--width {
+    width: 85%;
+  }
+  .comments__header {
+    font-size: 3.6rem;
+  }
+  .comments__form-container {
+    justify-content: center;
+    padding-bottom: 0;
+    border-bottom: solid 1px #e1e1e1;
+  }
+  .comments__header-container {
+    margin: 0 auto;
+    width: 60%;
+  }
+  .comments__img {
+    margin-right: 2.5rem;
+  }
+  .comments__form {
+    padding-bottom: 2rem;
+  }
+  .comments__form-name {
+    margin-bottom: 1.5rem;
+  }
+  .comments__name-input, .comments__form-comment {
+    padding: 2.1rem 0 2.1rem 2rem;
+  }
+  .comments__name-input::placeholder, .comments__form-comment::placeholder {
+    font-size: 1.9rem;
+  }
+  .comments__form-comment {
+    height: 14rem;
+  }
+  .comments__btn {
+    width: 20rem;
+    padding: 2rem 0;
+    font-size: 2rem;
+    margin: 2.5rem 0;
+  }
+  .comments__list {
+    width: 60%;
+    margin: 0 auto;
+  }
+  .comments__list-card {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
   }
 }
 

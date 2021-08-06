@@ -1,5 +1,6 @@
-@use './partial' as *;
+@use './mixins' as *;
 @use './base' as *;
+@use './variables' as *;
 
 // top navigation
 
@@ -52,7 +53,7 @@
     bottom: 0;
   }
 
-  @include mobile-adjusted {
+  @include adjusted {
     & {
       display: flex;
       flex-direction: row;
@@ -226,7 +227,7 @@
     height: auto;
   }
 
-  @include mobile-adjusted {
+  @include adjusted {
     & {
       height: 54vh;
     }

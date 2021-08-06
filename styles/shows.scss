@@ -1,7 +1,8 @@
-@use './partials/partial' as *;
+@use './partials/mixins' as *;
 @use './partials/base' as *;
 @use './partials/header' as *;
 @use './partials/footer' as *;
+@use './partials/variables' as *;
 
 .shows {
   padding-bottom: 2rem;
@@ -27,6 +28,10 @@
   &__list-card {
     padding: 1.8rem 0;
     border-bottom: solid 1px $mercury;
+  }
+
+  &__space.shows__btn {
+    visibility: hidden;
   }
 
   &__dates,
@@ -64,7 +69,7 @@
     font-weight: 600;
   }
 
-  @include mobile-adjusted {
+  @include adjusted {
     &__btn {
       max-width: 18rem;
     }
@@ -90,6 +95,7 @@
       position: initial;
       visibility: visible;
       display: flex;
+      justify-content: center;
       color: $mercury;
     }
 
@@ -109,7 +115,8 @@
 
     &__dates,
     &__venue,
-    &__location {
+    &__location,
+    &__space {
       width: 25%;
     }
 

@@ -1,7 +1,8 @@
-@use './partials/partial' as *;
+@use './partials/mixins' as *;
 @use './partials/base' as *;
 @use './partials/header' as *;
 @use './partials/footer' as *;
+@use './partials/variables' as *;
 
 // about section
 .about {
@@ -44,14 +45,11 @@
     color: $bandsite-darkblack;
   }
 
-  // &__bio-container {
-  // }
-
   &__bio-paragraph {
     padding: 0 0 1.3rem 0;
   }
 
-  @include mobile-adjusted {
+  @include adjusted {
     &__header {
       padding: 3rem 0 2rem 1rem;
     }
@@ -156,7 +154,7 @@
     margin-bottom: 1rem;
   }
 
-  @include mobile-adjusted {
+  @include adjusted {
     &__header {
       padding: 2rem 0 2rem 0rem;
       width: 90%;
@@ -190,6 +188,254 @@
     &__header {
       padding-left: 0;
       width: 85%;
+    }
+  }
+}
+
+// comments section
+.comments {
+  padding: 1.8rem 0 2rem 0;
+  // @include flex-column;
+
+  &__header {
+    display: flex;
+    align-self: flex-start;
+    font-weight: 600;
+    padding-bottom: 1.5rem;
+  }
+
+  &__img {
+    width: 3.8rem;
+    height: 3.8rem;
+    border-radius: 50%;
+    background-image: url(../assets/images/Mohan-muruge.jpg);
+    background-position: center;
+    background-size: cover;
+    margin-top: 2.5rem;
+  }
+
+  &__form-container {
+    display: flex;
+    min-width: 100%;
+    justify-content: space-between;
+    padding-bottom: 1.8rem;
+    border-bottom: solid 1px $mercury;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    min-width: 81%;
+  }
+
+  &__form-name,
+  &__form-text {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1.8rem;
+  }
+
+  &__name,
+  &__text-label {
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: $silver;
+  }
+
+  &__name-input,
+  &__form-comment {
+    padding: 1.4rem 0 1.4rem 1.2rem;
+    border: solid 0.1rem $mercury;
+    border-radius: 0.5rem;
+  }
+
+  &__name-input::placeholder,
+  &__form-comment::placeholder {
+    color: $bandsite-black;
+    font-size: 1.5rem;
+    font-family: "avenir", sans-serif;
+  }
+
+  &__form-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__btn {
+    border: none;
+    background-color: $bandsite-black;
+    color: $alabaster;
+    width: 100%;
+    padding: 1.5rem 0;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  &__list-card {
+    display: flex;
+    padding: 2rem 0;
+    border-bottom: solid 1px $mercury;
+    justify-content: space-between;
+  }
+
+  &__list-img {
+    width: 3.8rem;
+    height: 3.8rem;
+    border-radius: 50%;
+    background-color: $mercury;
+  }
+
+  &__list-details {
+    display: flex;
+    flex-direction: column;
+    width: 81%;
+  }
+
+  &__list-user {
+    // min-width: 81%;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+  }
+
+  &__user-name {
+    font-weight: 600;
+    font-size: 1.4rem;
+  }
+
+  &__user-date {
+    font-size: 1.4rem;
+    color: $silver;
+  }
+
+  @include adjusted {
+    &__form-container {
+      justify-content: space-evenly;
+    }
+
+    &__list-card {
+      justify-content: space-evenly;
+    }
+  }
+
+  @include tablet {
+    &.comments--width {
+      padding-bottom: 4.7rem;
+      margin: 0 auto;
+      width: 90%;
+    }
+
+    &__header {
+      margin-top: 2.5rem;
+      margin-bottom: 2.7rem;
+    }
+
+    &__img {
+      width: 4.8rem;
+      height: 4.8rem;
+    }
+
+    &__name,
+    &__text-label {
+      font-size: 1.3rem;
+    }
+
+    &__name-input,
+    &__form-comment {
+      padding: 1.8rem 0 1.8rem 1.8rem;
+    }
+
+    &__form-comment {
+      height: 11rem;
+    }
+
+    &__btn-container {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    &__btn {
+      width: 22rem;
+      margin: 2rem 0;
+      font-size: 1.8rem;
+    }
+
+    &__list-img {
+      width: 4.8rem;
+      height: 4.8rem;
+    }
+
+    &__user-name,
+    &__user-date,
+    &__list-text {
+      font-size: 1.6rem;
+    }
+  }
+
+  @include desktop {
+    &.comments--width {
+      width: 85%;
+    }
+
+    &__header {
+      font-size: 3.6rem;
+    }
+
+    &__form-container {
+      justify-content: center;
+      padding-bottom: 0;
+      border-bottom: solid 1px $mercury;
+    }
+
+    &__header-container {
+      margin: 0 auto;
+      width: 60%;
+    }
+
+    &__img {
+      margin-right: 2.5rem;
+    }
+
+    &__form {
+      // min-width: 50%;
+      padding-bottom: 2rem;
+    }
+
+    &__form-name {
+      margin-bottom: 1.5rem;
+    }
+
+    &__name-input,
+    &__form-comment {
+      padding: 2.1rem 0 2.1rem 2rem;
+    }
+
+    &__name-input::placeholder,
+    &__form-comment::placeholder {
+      font-size: 1.9rem;
+    }
+
+    &__form-comment {
+      height: 14rem;
+    }
+
+    &__btn {
+      width: 20rem;
+      padding: 2rem 0;
+      font-size: 2rem;
+      margin: 2.5rem 0;
+    }
+
+    &__list {
+      width: 60%;
+      margin: 0 auto;
+    }
+
+    &__list-card {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
     }
   }
 }

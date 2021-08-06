@@ -1,5 +1,6 @@
-@use './partial' as *;
+@use './mixins' as *;
 @use './base' as *;
+@use './variables' as *;
 
 // footer
 
@@ -9,15 +10,6 @@
   background-color: $bandsite-black;
   padding: 1.5rem;
   color: $white;
-
-  // &__container {
-  // }
-
-  // &__header-container {
-  // }
-
-  // &__secondary-container {
-  // }
 
   &__header {
     font-weight: 600;
@@ -57,9 +49,6 @@
     padding: 0 0 1.9rem 0;
   }
 
-  // &__contact-email {
-  // }
-
   &__copy-logo {
     margin-top: 3rem;
   }
@@ -72,7 +61,7 @@
     font-size: 1.1rem;
   }
 
-  @include mobile-adjusted {
+  @include adjusted {
     &__container {
       width: 90%;
     }

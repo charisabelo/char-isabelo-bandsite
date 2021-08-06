@@ -1,4 +1,4 @@
-/* adjustment for mobile / smaller screen */
+/* adjustment breakpoint */
 * {
   margin: 0;
   padding: 0;
@@ -476,6 +476,9 @@ button {
   padding: 1.8rem 0;
   border-bottom: solid 1px #e1e1e1;
 }
+.shows__space.shows__btn {
+  visibility: hidden;
+}
 .shows__dates, .shows__venue, .shows__location {
   color: #afafaf;
   padding-bottom: 0.8rem;
@@ -522,6 +525,7 @@ button {
     position: initial;
     visibility: visible;
     display: flex;
+    justify-content: center;
     color: #e1e1e1;
   }
   .shows__tablet--hidden {
@@ -534,7 +538,7 @@ button {
     align-items: center;
     margin-bottom: 0;
   }
-  .shows__dates, .shows__venue, .shows__location {
+  .shows__dates, .shows__venue, .shows__location, .shows__space {
     width: 25%;
   }
   .shows__dates-name, .shows__venue-name, .shows__location-name {
