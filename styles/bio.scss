@@ -142,6 +142,7 @@
     display: flex;
     font-weight: 600;
     padding: 1.5rem 0 1.3rem 0;
+    align-self: flex-start;
   }
 
   &__photo-list {
@@ -182,11 +183,15 @@
       height: auto;
       margin-right: 2rem;
     }
+
+    &__header {
+      padding-left: 4rem;
+    }
   }
 
   @include desktop {
     &__header {
-      padding-left: 0;
+      padding-left: 9rem;
       width: 85%;
     }
   }
@@ -248,6 +253,10 @@
     padding: 1.4rem 0 1.4rem 1.2rem;
     border: solid 0.1rem $mercury;
     border-radius: 0.5rem;
+  }
+
+  &__form-comment {
+    font-family: "avenir";
   }
 
   &__name-input::placeholder,

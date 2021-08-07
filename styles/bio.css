@@ -191,7 +191,7 @@ button {
 }
 @media only screen and (min-width: 1280px) {
   .header-nav__logo {
-    padding: 3.4rem 0 3rem 12rem;
+    padding: 3.4rem 0 3rem 14rem;
   }
   .header-nav__list {
     width: 20%;
@@ -222,7 +222,7 @@ button {
   background-image: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url(../assets/images/hero-bio.jpg);
   background-position: center;
   background-size: cover;
-  height: 40vh;
+  height: 22rem;
   padding: 0 2rem;
 }
 .hero--shows {
@@ -278,7 +278,7 @@ button {
 }
 @media only screen and (min-width: 768px) {
   .hero {
-    height: 60vh;
+    height: 48rem;
   }
   .hero--shows {
     height: auto;
@@ -287,7 +287,7 @@ button {
   }
   .hero__header {
     font-size: 5.5rem;
-    margin-left: 4rem;
+    margin-left: 2rem;
   }
   .hero__header-secondary {
     margin-left: 2rem;
@@ -323,7 +323,7 @@ button {
     font-size: 6.2rem;
   }
   .hero--shows {
-    height: 84rem;
+    height: 75rem;
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -571,6 +571,7 @@ button {
   display: flex;
   font-weight: 600;
   padding: 1.5rem 0 1.3rem 0;
+  align-self: flex-start;
 }
 .gallery__photo-list {
   display: flex;
@@ -607,10 +608,13 @@ button {
     height: auto;
     margin-right: 2rem;
   }
+  .gallery__header {
+    padding-left: 4rem;
+  }
 }
 @media only screen and (min-width: 1280px) {
   .gallery__header {
-    padding-left: 0;
+    padding-left: 9rem;
     width: 85%;
   }
 }
@@ -660,6 +664,9 @@ button {
   padding: 1.4rem 0 1.4rem 1.2rem;
   border: solid 0.1rem #e1e1e1;
   border-radius: 0.5rem;
+}
+.comments__form-comment {
+  font-family: "avenir";
 }
 .comments__name-input::placeholder, .comments__form-comment::placeholder {
   color: #323232;

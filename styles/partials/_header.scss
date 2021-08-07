@@ -135,7 +135,7 @@
 
   @include desktop {
     &__logo {
-      padding: 3.4rem 0 3rem 12rem;
+      padding: 3.4rem 0 3rem 14rem;
     }
 
     &__list {
@@ -182,7 +182,7 @@
       url(../assets/images/hero-bio.jpg);
     background-position: center;
     background-size: cover;
-    height: 40vh;
+    height: 22rem;
     padding: 0 2rem;
   }
 
@@ -253,7 +253,7 @@
 
   @include tablet {
     & {
-      height: 60vh;
+      height: 48rem;
     }
 
     &--shows {
@@ -264,7 +264,7 @@
 
     &__header {
       font-size: 5.5rem;
-      margin-left: 4rem;
+      margin-left: 2rem;
     }
 
     &__header-secondary {
@@ -307,7 +307,7 @@
     }
 
     &--shows {
-      height: 84rem;
+      height: 75rem;
       @include flex-row;
       flex-direction: row;
       justify-content: space-around;
