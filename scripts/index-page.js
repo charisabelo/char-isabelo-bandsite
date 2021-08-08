@@ -75,9 +75,13 @@ const onSubmitValue = (event) => {
   const nameField = document.querySelector(".comments__name-input").value;
   const commentField = document.querySelector(".comments__form-comment").value;
 
+  let today = new Date();
+  let date =
+    today.getMonth() + "/" + today.getDate() + "/" + today.getFullYear();
+
   let newObj = {
     name: nameField,
-    timeStamp: "07/05/2021",
+    timeStamp: date,
     comment: commentField,
   };
 
@@ -89,7 +93,7 @@ const onSubmitValue = (event) => {
 
   let concatedArray = newCommentsArray.concat(commentsArray);
 
-  console.log("concated", concatedArray);
+  // console.log("concated", concatedArray);
 
   concatedArray.forEach((item) => {
     return displayComment(item);
