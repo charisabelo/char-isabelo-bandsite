@@ -3,60 +3,73 @@ const url = "https://project-1-api.herokuapp.com/";
 const api = "?api_key=841289f3-4993-4376-bf7d-61058c65c905";
 const showDates = "showdates";
 
-// axios
-//   .get(url + showDates + api)
-//   .then((response) => {
-//     const data = response.data;
-//     console.log(data);
-//   })
-//   .then(myShowsList)
-//   .catch((error) => {
+//   axios
+//     .get(url + showDates + api)
+//     .then((response) => {
+//       shows = response.data;
+//       return shows;
+//     })
+//     .catch((error) => {
+//       console.log(error);
+//     });
+
+// async function getShows() {
+//   try {
+//     let response = await axios.get(url + showDates + api);
+//     let shows = response.data;
+//     console.log(shows);
+//     return shows;
+//   } catch (error) {
 //     console.log(error);
-//   });
+//   }
+// }
 
-async function getShowInfo(url) {
-  let response = await axios.get(url);
-  let data = await response.data;
-  return data;
-}
+// async function getShowInfo(url) {
+//   let response = await axios.get(url);
+//   let data = await response.data;
+//   return data;
+// }
 
-async function getShowsListGlobal() {
-  shows = await getShowInfo(url + showDates + api);
-  return shows;
-}
+// async function getShowsListGlobal() {
+//   shows = await getShowInfo(url + showDates + api);
+//   console.log(shows);
+//   return shows;
+// }
 
-let shows = [
-  {
-    date: "Mon Sept 06 2021",
-    venue: "Ronald Lane",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Tue Sept 21 2021",
-    venue: "Pier 3 East",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Fri Oct 15 2021",
-    venue: "View Lounge",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Sat Nov 06 2021",
-    venue: "Hyatt Agency",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Fri Nov 26 2021",
-    venue: "Moscow Center",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Wed Dec 15 2021",
-    venue: "Press Club",
-    location: "San Francisco, CA",
-  },
-];
+// getShowsListGlobal();
+
+// let shows = [
+//   {
+//     date: "Mon Sept 06 2021",
+//     venue: "Ronald Lane",
+//     location: "San Francisco, CA",
+//   },
+//   {
+//     date: "Tue Sept 21 2021",
+//     venue: "Pier 3 East",
+//     location: "San Francisco, CA",
+//   },
+//   {
+//     date: "Fri Oct 15 2021",
+//     venue: "View Lounge",
+//     location: "San Francisco, CA",
+//   },
+//   {
+//     date: "Sat Nov 06 2021",
+//     venue: "Hyatt Agency",
+//     location: "San Francisco, CA",
+//   },
+//   {
+//     date: "Fri Nov 26 2021",
+//     venue: "Moscow Center",
+//     location: "San Francisco, CA",
+//   },
+//   {
+//     date: "Wed Dec 15 2021",
+//     venue: "Press Club",
+//     location: "San Francisco, CA",
+//   },
+// ];
 
 const createDatesContainer = (concertDate) => {
   // create shows__dates-container
@@ -130,19 +143,31 @@ const createBuyTicketsBtn = () => {
   return buyTicketsBtn;
 };
 
-const createAndAppendShowsListCard = () => {
+const createAndAppendShowsListCard = (shows) => {
   for (let i = 0; i < shows.length; i++) {
     let showsListCard = document.createElement("div");
     showsListCard.classList.add("shows__list-card");
 
-    let showDate = createDatesContainer(shows[i]["date"]);
-    showsListCard.appendChild(showDate);
-    let showVenue = createVenueContainer(shows[i]["venue"]);
+    let timeStamp = parseInt(shows[i]["date"]);
+    let theDate = new Date(Date.UTC(timeStamp));
+    console.log(theDate);
+
+    // const weekday = theDate.toLocaleString("en-US", { weekday: "short" });
+    // const month = theDate.toLocaleString("en-US", { month: "short" });
+    // const day = theDate.toLocaleString("en-US", { day: "numeric" });
+    // const year = theDate.toLocaleDateString("en-US", { year: "numeric" });
+    // const dayNum = day < 10 ? "0" + day : day;
+    // let showDate = createDatesContainer(
+    //   `${weekday} ${month} ${dayNum} ${year}`
+    // );
+
+    // showsListCard.appendChild(showDate);
+    let showVenue = createVenueContainer(shows[i]["place"]);
     showsListCard.appendChild(showVenue);
     let showLocation = createLocationContainer(shows[i]["location"]);
     showsListCard.appendChild(showLocation);
     let showBtn = createBuyTicketsBtn();
-    showBtn.setAttribute("name", shows[i]["venue"]);
+    showBtn.setAttribute("name", shows[i]["place"]);
     showsListCard.appendChild(showBtn);
     showsList.appendChild(showsListCard);
   }
@@ -150,14 +175,25 @@ const createAndAppendShowsListCard = () => {
   //   return showsList.append(showsListCard);
 };
 
-createAndAppendShowsListCard();
+async function getShows() {
+  try {
+    let response = await axios.get(url + showDates + api);
+    let shows = response.data;
+    console.log(shows);
+    createAndAppendShowsListCard(shows);
 
-// button event listener
-const btnEvent = document.querySelectorAll(".shows__btn");
-// console.log(btnEvent);
+    // button event listener
+    const btnEvent = document.querySelectorAll(".shows__btn");
+    console.log(btnEvent);
 
-btnEvent.forEach((button) => {
-  button.addEventListener("click", (event) => {
-    console.log(event.target.attributes.name.nodeValue);
-  });
-});
+    btnEvent.forEach((button) => {
+      button.addEventListener("click", (event) => {
+        console.log(event.target.attributes.name.nodeValue);
+      });
+    });
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+getShows();
