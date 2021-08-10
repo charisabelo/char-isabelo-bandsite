@@ -1,10 +1,11 @@
 @use './mixins' as *;
 @use './base' as *;
 @use './variables' as *;
+@use './typography' as *;
 
 // top navigation
 
-.header-nav {
+.header {
   @include flex-column;
   background-color: $bandsite-black;
 

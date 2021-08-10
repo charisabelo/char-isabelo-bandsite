@@ -1,5 +1,6 @@
 @use './mixins' as *;
 @use './variables' as *;
+@use './typography' as *;
 
 // css resets
 
@@ -83,24 +84,5 @@ button {
   /* labels & buttons */
   font-size: 1rem;
   line-height: 2rem;
-  font-weight: 700;
-}
-
-// fonts
-@font-face {
-  font-family: "avenir";
-  src: url(../../assets/font/alternative-files/AvenirNextLTPro.ttf);
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: "avenir";
-  src: url(../../assets/font/alternative-files/AvenirNextLTProDemi.ttf);
-  font-weight: 600;
-}
-
-@font-face {
-  font-family: "avenir";
-  src: url(../../assets/font/alternative-files/AvenirNextLTProBold.ttf);
   font-weight: 700;
 }

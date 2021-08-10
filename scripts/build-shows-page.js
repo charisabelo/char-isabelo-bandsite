@@ -1,19 +1,28 @@
-{
-  /* <div class="shows__list-card">
-  <div class="shows__dates-container">
-    <p class="shows__dates shows__tablet--hidden">DATES</p>
-    <p class="shows__dates-name">Mon Sept 06 2021</p>
-  </div>
-  <div class="shows__venue-container">
-    <p class="shows__venue shows__tablet--hidden">VENUE</p>
-    <p class="shows__venue-name">Ronald Lane</p>
-  </div>
-  <div class="shows__location-container">
-    <p class="shows__location shows__tablet--hidden">LOCATION</p>
-    <p class="shows__location-name">San Francisco, CA</p>
-  </div>
-  <button class="shows__btn">BUY TICKETS</button>
-</div> */
+const showsList = document.querySelector(".shows__list");
+const url = "https://project-1-api.herokuapp.com/";
+const api = "?api_key=841289f3-4993-4376-bf7d-61058c65c905";
+const showDates = "showdates";
+
+// axios
+//   .get(url + showDates + api)
+//   .then((response) => {
+//     const data = response.data;
+//     console.log(data);
+//   })
+//   .then(myShowsList)
+//   .catch((error) => {
+//     console.log(error);
+//   });
+
+async function getShowInfo(url) {
+  let response = await axios.get(url);
+  let data = await response.data;
+  return data;
+}
+
+async function getShowsListGlobal() {
+  shows = await getShowInfo(url + showDates + api);
+  return shows;
 }
 
 let shows = [
@@ -48,9 +57,6 @@ let shows = [
     location: "San Francisco, CA",
   },
 ];
-
-const showsList = document.querySelector(".shows__list");
-// console.log(showsList);
 
 const createDatesContainer = (concertDate) => {
   // create shows__dates-container
@@ -124,14 +130,8 @@ const createBuyTicketsBtn = () => {
   return buyTicketsBtn;
 };
 
-// createDatesContainer();
-// createVenueContainer();
-// createLocationContainer();
-// createBuyTicketsBtn();
-
 const createAndAppendShowsListCard = () => {
   for (let i = 0; i < shows.length; i++) {
-    // console.log(shows[i]);
     let showsListCard = document.createElement("div");
     showsListCard.classList.add("shows__list-card");
 
@@ -154,7 +154,7 @@ createAndAppendShowsListCard();
 
 // button event listener
 const btnEvent = document.querySelectorAll(".shows__btn");
-console.log(btnEvent);
+// console.log(btnEvent);
 
 btnEvent.forEach((button) => {
   button.addEventListener("click", (event) => {
