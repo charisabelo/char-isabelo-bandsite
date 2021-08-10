@@ -38,39 +38,6 @@ const showDates = "showdates";
 
 // getShowsListGlobal();
 
-// let shows = [
-//   {
-//     date: "Mon Sept 06 2021",
-//     venue: "Ronald Lane",
-//     location: "San Francisco, CA",
-//   },
-//   {
-//     date: "Tue Sept 21 2021",
-//     venue: "Pier 3 East",
-//     location: "San Francisco, CA",
-//   },
-//   {
-//     date: "Fri Oct 15 2021",
-//     venue: "View Lounge",
-//     location: "San Francisco, CA",
-//   },
-//   {
-//     date: "Sat Nov 06 2021",
-//     venue: "Hyatt Agency",
-//     location: "San Francisco, CA",
-//   },
-//   {
-//     date: "Fri Nov 26 2021",
-//     venue: "Moscow Center",
-//     location: "San Francisco, CA",
-//   },
-//   {
-//     date: "Wed Dec 15 2021",
-//     venue: "Press Club",
-//     location: "San Francisco, CA",
-//   },
-// ];
-
 const createDatesContainer = (concertDate) => {
   // create shows__dates-container
   const datesContainer = document.createElement("div");
@@ -149,19 +116,25 @@ const createAndAppendShowsListCard = (shows) => {
     showsListCard.classList.add("shows__list-card");
 
     let timeStamp = parseInt(shows[i]["date"]);
-    let theDate = new Date(Date.UTC(timeStamp));
-    console.log(theDate);
+    let theDate = new Date(timeStamp);
+    let newYorkTime = theDate.toLocaleString("en-US", {
+      timeZone: "America/New_York",
+    });
+    let newYorkConversion = new Date(newYorkTime);
+    const weekday = newYorkConversion.toLocaleString("en-US", {
+      weekday: "short",
+    });
+    const month = newYorkConversion.toLocaleString("en-US", { month: "short" });
+    const day = newYorkConversion.toLocaleString("en-US", { day: "numeric" });
+    const year = newYorkConversion.toLocaleDateString("en-US", {
+      year: "numeric",
+    });
+    const dayNum = day < 10 ? "0" + day : day;
+    let showDate = createDatesContainer(
+      `${weekday} ${month} ${dayNum} ${year}`
+    );
 
-    // const weekday = theDate.toLocaleString("en-US", { weekday: "short" });
-    // const month = theDate.toLocaleString("en-US", { month: "short" });
-    // const day = theDate.toLocaleString("en-US", { day: "numeric" });
-    // const year = theDate.toLocaleDateString("en-US", { year: "numeric" });
-    // const dayNum = day < 10 ? "0" + day : day;
-    // let showDate = createDatesContainer(
-    //   `${weekday} ${month} ${dayNum} ${year}`
-    // );
-
-    // showsListCard.appendChild(showDate);
+    showsListCard.appendChild(showDate);
     let showVenue = createVenueContainer(shows[i]["place"]);
     showsListCard.appendChild(showVenue);
     let showLocation = createLocationContainer(shows[i]["location"]);
@@ -179,12 +152,10 @@ async function getShows() {
   try {
     let response = await axios.get(url + showDates + api);
     let shows = response.data;
-    console.log(shows);
     createAndAppendShowsListCard(shows);
 
     // button event listener
     const btnEvent = document.querySelectorAll(".shows__btn");
-    console.log(btnEvent);
 
     btnEvent.forEach((button) => {
       button.addEventListener("click", (event) => {
