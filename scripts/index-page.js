@@ -1,25 +1,6 @@
-let commentsArray = [
-  {
-    name: "Connor Walton",
-    timeStamp: "02/17/2021",
-    comment:
-      "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. const us appreciate this for what it is and what it contains.",
-  },
-  {
-    name: "Emilie Beach",
-    timeStamp: "01/09/2021",
-    comment:
-      "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-  },
-  {
-    name: "Miles Acosta",
-    timeStamp: "12/20/2020",
-    comment: `I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.`,
-  },
-];
-
 let commentsList = document.querySelector(".comments__list");
 const submit = document.querySelector(".comments__form");
+const commentsUrl = `https://project-1-api.herokuapp.com/comments?api_key=ed8988bd-1dfd-4c2f-857c-4022fa5b6892`;
 
 const displayComment = (commentObj) => {
   // create comments__list-card container
@@ -49,9 +30,18 @@ const displayComment = (commentObj) => {
   commentsListUser.appendChild(commentsUserName);
 
   // create comments__user-date
+  let dateConversion = new Date(commentObj.timestamp);
+  let newYorkTime = dateConversion.toLocaleString("en-US", {
+    timeZone: "America/New_York",
+  });
+  let newYorkConvert = new Date(newYorkTime);
+  let month = newYorkConvert.toLocaleString("en-US", { month: "2-digit" });
+  let day = newYorkConvert.toLocaleString("en-US", { day: "2-digit" });
+  let year = newYorkConvert.toLocaleString("en-US", { year: "numeric" });
+
   const commentsUserDate = document.createElement("p");
   commentsUserDate.classList.add("comments__user-date");
-  commentsUserDate.innerText = commentObj.timeStamp;
+  commentsUserDate.innerText = `${month}/${day}/${year}`;
   commentsListUser.appendChild(commentsUserDate);
 
   // create comments__list-text
@@ -63,41 +53,48 @@ const displayComment = (commentObj) => {
   return commentsListCard;
 };
 
-commentsArray.forEach((comment) => {
-  return displayComment(comment);
-});
+const promiseDisplay = () => {
+  let p = new Promise((resolve, reject) => {
+    resolve(axios.get(commentsUrl));
+  });
 
-let newCommentsArray = [];
+  p.then((result1) => {
+    return result1.data;
+  })
+    .then((result2) => {
+      let commentsArray = result2;
+      let sortedArray = commentsArray.sort((a, b) => {
+        return b.timestamp - a.timestamp;
+      });
+      sortedArray.forEach((comment) => {
+        return displayComment(comment);
+      });
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
+
+promiseDisplay();
 
 const onSubmitValue = (event) => {
   event.preventDefault();
-  console.log(event);
   const nameField = document.querySelector(".comments__name-input").value;
   const commentField = document.querySelector(".comments__form-comment").value;
 
-  let today = new Date();
-  let date =
-    today.getMonth() + "/" + today.getDate() + "/" + today.getFullYear();
-
-  let newObj = {
-    name: nameField,
-    timeStamp: date,
-    comment: commentField,
-  };
-
-  commentsList.innerHTML = ``;
-  //   console.log(commentsList);
-
-  newCommentsArray.unshift(newObj);
-  //   console.log(newCommentsArray);
-
-  let concatedArray = newCommentsArray.concat(commentsArray);
-
-  // console.log("concated", concatedArray);
-
-  concatedArray.forEach((item) => {
-    return displayComment(item);
-  });
+  axios
+    .post(commentsUrl, {
+      name: nameField,
+      comment: commentField,
+    })
+    .then((res) => {
+      console.log(res);
+      commentsList.innerHTML = ``;
+      promiseDisplay();
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 
   const form = document.querySelector("form");
   form.reset();

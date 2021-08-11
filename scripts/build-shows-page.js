@@ -3,41 +3,6 @@ const url = "https://project-1-api.herokuapp.com/";
 const api = "?api_key=841289f3-4993-4376-bf7d-61058c65c905";
 const showDates = "showdates";
 
-//   axios
-//     .get(url + showDates + api)
-//     .then((response) => {
-//       shows = response.data;
-//       return shows;
-//     })
-//     .catch((error) => {
-//       console.log(error);
-//     });
-
-// async function getShows() {
-//   try {
-//     let response = await axios.get(url + showDates + api);
-//     let shows = response.data;
-//     console.log(shows);
-//     return shows;
-//   } catch (error) {
-//     console.log(error);
-//   }
-// }
-
-// async function getShowInfo(url) {
-//   let response = await axios.get(url);
-//   let data = await response.data;
-//   return data;
-// }
-
-// async function getShowsListGlobal() {
-//   shows = await getShowInfo(url + showDates + api);
-//   console.log(shows);
-//   return shows;
-// }
-
-// getShowsListGlobal();
-
 const createDatesContainer = (concertDate) => {
   // create shows__dates-container
   const datesContainer = document.createElement("div");
@@ -144,8 +109,6 @@ const createAndAppendShowsListCard = (shows) => {
     showsListCard.appendChild(showBtn);
     showsList.appendChild(showsListCard);
   }
-
-  //   return showsList.append(showsListCard);
 };
 
 async function getShows() {
