@@ -3,33 +3,27 @@ const submit = document.querySelector(".comments__form");
 const commentsUrl = `https://project-1-api.herokuapp.com/comments?api_key=ed8988bd-1dfd-4c2f-857c-4022fa5b6892`;
 
 const displayComment = (commentObj) => {
-  // create comments__list-card container
   const commentsListCard = document.createElement("div");
   commentsListCard.classList.add("comments__list-card");
   commentsList.appendChild(commentsListCard);
 
-  // create comments__list-img
   const commentsListImg = document.createElement("div");
   commentsListImg.classList.add("comments__list-img");
   commentsListCard.appendChild(commentsListImg);
 
-  // create comments__list-details
   const commentsListDetails = document.createElement("div");
   commentsListDetails.classList.add("comments__list-details");
   commentsListCard.appendChild(commentsListDetails);
 
-  // create comments__list-user
   const commentsListUser = document.createElement("div");
   commentsListUser.classList.add("comments__list-user");
   commentsListDetails.appendChild(commentsListUser);
 
-  // create comments__user-name
   const commentsUserName = document.createElement("p");
   commentsUserName.classList.add("comments__user-name");
   commentsUserName.innerText = commentObj.name;
   commentsListUser.appendChild(commentsUserName);
 
-  // create comments__user-date
   let dateConversion = new Date(commentObj.timestamp);
   let newYorkTime = dateConversion.toLocaleString("en-US", {
     timeZone: "America/New_York",
@@ -44,7 +38,6 @@ const displayComment = (commentObj) => {
   commentsUserDate.innerText = `${month}/${day}/${year}`;
   commentsListUser.appendChild(commentsUserDate);
 
-  // create comments__list-text
   const commentsListText = document.createElement("p");
   commentsListText.classList.add("comments__list-text");
   commentsListText.innerText = commentObj.comment;

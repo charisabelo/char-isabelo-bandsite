@@ -4,65 +4,53 @@ const api = "?api_key=841289f3-4993-4376-bf7d-61058c65c905";
 const showDates = "showdates";
 
 const createDatesContainer = (concertDate) => {
-  // create shows__dates-container
   const datesContainer = document.createElement("div");
   datesContainer.classList.add("shows__dates-container");
 
-  // create shows__dates & append to shows__dates-container
   const dates = document.createElement("p");
   dates.classList.add("shows__dates", "shows__tablet--hidden");
   dates.innerText = "DATES";
   datesContainer.appendChild(dates);
 
-  //   create shows__dates-name & append to shows__dates-container
   const datesName = document.createElement("p");
   datesName.classList.add("shows__dates-name");
   datesName.innerText = concertDate;
   datesContainer.appendChild(datesName);
 
-  //   console.log(datesContainer);
   return datesContainer;
 };
 
 const createVenueContainer = (concertVenue) => {
-  // create shows__venue-container
   const venueContainer = document.createElement("div");
   venueContainer.classList.add("shows__venue-container");
 
-  // create shows__venue & append to shows__venue-container
   const venue = document.createElement("p");
   venue.classList.add("shows__venue", "shows__tablet--hidden");
   venue.innerText = "VENUE";
   venueContainer.appendChild(venue);
 
-  //   create shows__venue-name & append to shows__venue-container
   const venueName = document.createElement("p");
   venueName.classList.add("shows__venue-name");
   venueName.innerText = concertVenue;
   venueContainer.appendChild(venueName);
 
-  //   console.log(venueContainer);
   return venueContainer;
 };
 
 const createLocationContainer = (concertLocation) => {
-  // create shows__location-container
   const locationContainer = document.createElement("div");
   locationContainer.classList.add("shows__location-container");
 
-  // create shows__location & append to shows__location-container
   const location = document.createElement("p");
   location.classList.add("shows__location", "shows__tablet--hidden");
   location.innerText = "LOCATION";
   locationContainer.appendChild(location);
 
-  //   shows__location-name & append to shows__location-container
   const locationName = document.createElement("p");
   locationName.classList.add("shows__location-name");
   locationName.innerText = concertLocation;
   locationContainer.appendChild(locationName);
 
-  //   console.log(locationContainer);
   return locationContainer;
 };
 
@@ -71,7 +59,6 @@ const createBuyTicketsBtn = () => {
   buyTicketsBtn.classList.add("shows__btn");
   buyTicketsBtn.innerText = "BUY TICKETS";
 
-  //   console.log(buyTicketsBtn);
   return buyTicketsBtn;
 };
 
@@ -117,7 +104,6 @@ async function getShows() {
     let shows = response.data;
     createAndAppendShowsListCard(shows);
 
-    // button event listener
     const btnEvent = document.querySelectorAll(".shows__btn");
 
     btnEvent.forEach((button) => {
